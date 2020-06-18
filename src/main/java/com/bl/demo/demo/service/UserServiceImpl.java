@@ -10,11 +10,12 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
 
-  /*  @Autowired
+    @Autowired
     UserRepository userRepository;
 
     @Override
-    public User addUser(UserDto user) {
+    public User addUser(UserDto userDto) {
+        User user = new User(userDto);
         return userRepository.save(user);
 
     }
@@ -32,5 +33,5 @@ public class UserServiceImpl implements IUserService {
     @Override
     public String updateUser(Integer userId) {
         return null;
-    }*/
+    }
 }

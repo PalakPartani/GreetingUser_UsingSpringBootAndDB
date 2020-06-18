@@ -1,5 +1,6 @@
 package com.bl.demo.demo.model;
 
+import com.bl.demo.demo.dto.UserDto;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
@@ -18,6 +19,19 @@ public class User {
     public User() {
     }
 
+    public User(UserDto userDto) {
+        userName=userDto.userName;
+        password=userDto.password;
+
+    }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getUserName() {
         return userName;
     }
@@ -26,11 +40,4 @@ public class User {
         return password;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public LocalDateTime getRegisteredDate() {
-        return registeredDate;
-    }
 }
