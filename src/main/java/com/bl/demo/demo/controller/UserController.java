@@ -5,10 +5,7 @@ import com.bl.demo.demo.model.User;
 import com.bl.demo.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,11 @@ public class UserController {
     @GetMapping("/display")
     public List<User> displayUSer(){
         return userService.displayUser();
+    }
+
+    @PutMapping("/update/{id}")
+    public User addUser(@PathVariable(name = "id") Integer id, @RequestBody UserDto user) {
+        return userService.updateUser(id, user);
     }
 
 }

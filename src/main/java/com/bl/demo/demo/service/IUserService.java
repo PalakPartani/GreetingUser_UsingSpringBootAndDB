@@ -12,5 +12,5 @@ public interface IUserService {
 
     String deleteUser(Integer userId);
 
-    String updateUser(Integer userId);
+    User updateUser(Integer userId, UserDto userDto);
 }
