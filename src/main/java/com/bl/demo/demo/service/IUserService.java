@@ -8,9 +8,13 @@ import java.util.List;
 public interface IUserService {
     User addUser(UserDto user);
 
+    User displayUserById(Integer id);
+
     List<User> displayUser();
 
-    String deleteUser(Integer userId);
+    void deleteUser(Integer userId);
 
     User updateUser(Integer userId, UserDto userDto);
+
+
 }

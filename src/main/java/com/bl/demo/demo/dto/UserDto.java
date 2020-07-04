@@ -1,28 +1,38 @@
 package com.bl.demo.demo.dto;
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotEmpty;
+
 public class UserDto {
+    @Column(unique = true)
+    @NotEmpty(message = "Cannot be empty")
+    public String firstName;
 
-    public String userName;
-    public String password;
+    @NotEmpty(message = "Cannot be empty")
+    public String lastName;
 
-    public UserDto(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
+    public UserDto() {
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public UserDto(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getUserName() {
-        return userName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getFirstName() {
+        return firstName;
     }
+
+    public String getLastName() {
+        return lastName;
+    }
+
 }
